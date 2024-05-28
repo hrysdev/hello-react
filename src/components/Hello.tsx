@@ -1,7 +1,11 @@
 // src/components/Hello.tsx
 import React from "react";
 
-export default function Hello(props: { name: string }) {
+type Props = {
+  name: string;
+};
+
+export default function Hello(props: Props) {
   return <div>Hello, {props.name}.</div>;
 }
 
