@@ -1,5 +1,5 @@
 // src/index.tsx
-import React from "react";
+import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 import Top from "./pages/Top";
@@ -27,9 +27,11 @@ const container = document.getElementById("root");
 if (container) {
   const root = createRoot(container);
   root.render(
-    <UserProvider>
-      <RouterProvider router={router} />
-    </UserProvider>
+    <StrictMode>
+      <UserProvider>
+        <RouterProvider router={router} />
+      </UserProvider>
+    </StrictMode>
   );
 } else {
   throw new Error();
