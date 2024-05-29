@@ -6,6 +6,7 @@ import Top from "./pages/Top";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Counter from "./pages/Counter";
 import Detail from "./pages/Detail";
+import UserProvider from "./providers/UserProvider";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,11 @@ const router = createBrowserRouter([
 const container = document.getElementById("root");
 if (container) {
   const root = createRoot(container);
-  root.render(<RouterProvider router={router} />);
+  root.render(
+    <UserProvider>
+      <RouterProvider router={router} />
+    </UserProvider>
+  );
 } else {
   throw new Error();
 }
